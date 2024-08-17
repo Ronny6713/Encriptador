@@ -1,0 +1,438 @@
+
+
+:root {
+    --color_primario: #EAE8FF;
+    --color_secundario: #2D3142;
+    --color_terceario: #D8D5DB;
+    --fuente-rammetto: 'Rammetto One', sans-serif;
+    --fuente-pt-sans: 'PT Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1); 
+    z-index: 0; 
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0); 
+}
+
+.Main_Encriptador{
+    height: 100%;
+}
+
+.Encriptador {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    gap: 15em;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0);
+}
+
+.Logo_Alura{
+    width: 7.5em;
+    height: 3em;
+    padding-top: 2em;
+    position: relative;
+    z-index: 1; 
+}
+
+.Zona_Input {
+    padding-top: 8em;
+    position: relative;
+    z-index: 1;
+} 
+
+.Container_Input {
+    flex-direction: column;
+    width: 30em;
+    height: 18em;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 2em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    border-radius: 0.5-em;
+    background-color: transparent;
+    font-family: var(--fuente-rammetto);
+}
+
+.Container_Input::placeholder{
+    color: var(--color_secundario)
+}
+
+.Advertencia{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 0.5em;
+    font-family: font-family: var(--fuente-pt-sans);
+}
+
+.respuesta {
+    display: flex;
+    margin-top: 1.25em;
+    margin-bottom: 1.1em;
+    width: 28em;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+    position: relative;
+    z-index: 1; 
+    background: var(--color_primario); 
+    border-radius: 2em; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+    padding: 0.2em;
+}
+
+.boton-container {
+    display: flex;
+    padding-top: 0.2em;
+    height: 18em;
+    gap: 2em;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1; 
+}
+.Imagen_Ocultar{
+    justify-content: center;
+}
+
+.Imagen_Muñeco {
+    width: 19em;
+    height: 19em;
+    padding: 3em;
+    justify-content: center;
+}
+
+.Mensaje {
+    padding: 0.8em;
+    font-size: 2em;
+    text-decoration: dotted;
+    font-weight: bolder;
+    font-family: var(--fuente-pt-sans);
+}
+
+.Mensaje2 {
+    padding: 0.8em;
+    font-size: 1.5em;
+    font-family: var(--fuente-pt-sans);
+}
+
+.output {
+    display: none;
+    font-size: 2em;
+    width: 12em;
+    height: 8em;
+    text-align: left;
+    padding-top: 1.5em;
+    padding-bottom: 12.35em;
+    text-align: left;
+    border-radius: 0.5em;
+    border: none;
+    outline: none;
+    resize: none;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    border-radius: 0.5-em;
+    background-color: transparent;
+    font-family: var(--fuente-rammetto);
+}
+
+
+.Boton_Encriptar{
+    height: 4.19em;
+    width: 20.5em;
+    border-radius: 24px;
+    color: var(--color_primario);
+    background-color: var(--color_secundario);
+    font-family: var(--fuente-rammetto);
+}
+
+
+.Boton_Desencriptar:hover, .Boton_Copiar:hover {
+    background-color:var(--color_secundario); 
+    color: var(--color_primario);
+    transition: background-color 0.3s, color 0.3s
+}
+
+.Boton_Desencriptar{
+    height: 4.19em;
+    width: 20.5em;
+    border-radius: 1.5em;
+    color: var(--color_secundario);
+    background-color: var(--color_primario);
+    font-family: var(--fuente-rammetto);
+}
+.Boton_Encriptar:hover{
+    background-color:var(--color_primario); 
+    color: var(--color_secundario);
+}
+.Boton_Copiar {
+    width: 21em;
+    height: 4.19em;
+    border-radius: 1.5em;
+    color: var(--color_secundario);
+    background-color: var(--color_primario);
+    font-family: var(--fuente-rammetto);
+}
+
+
+
+/* Media Queries para diferentes tamaños de pantallas */
+
+/*Celulares*/
+@media (max-width: 500px) {
+    
+    .Encriptador {
+        gap: 1em;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Logo_Alura {
+        width: 6em;
+        height: 2.5em;
+        align-self: flex-start;
+    }
+
+    .Zona_Input {
+        padding-top: 1em;
+        align-items: center;
+    }
+
+    .Container_Input {
+        padding: 1em;
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        font-size: 1.5em;
+    }
+
+    .respuesta {
+        width: 98%;
+        text-align: center;
+        gap: 5em;
+    }
+
+    .output {
+        align-items: center;
+        padding: 0.5em;
+        font-size: 1.5em;
+        transition: height 0.3s ease, padding 0.3s ease;
+    }
+
+    .Imagen_Muñeco {
+        display: none;
+    }
+
+    .Mensaje, .Mensaje2 {
+        font-size: 1em; 
+    }
+
+    .Advertencia {
+        padding: 1.5em;
+    }
+
+    .Imagen_Ocultar {
+        width: 100%;
+    }
+
+    .boton-container {
+        flex-direction: column;
+        justify-content: center;
+        height: 10em;
+        width: 97%;    
+    }
+
+    .Boton_Encriptar,
+    .Boton_Desencriptar {
+        width: 100%; 
+        height: 4.5em; 
+        font-size: 1em;
+    }
+
+    .Boton_Copiar {
+        width: 66%;
+        font-size: 1em;
+        border-top: 50%;
+    }
+
+}
+
+
+
+/* Tabletas */
+@media (min-width: 501px) and (max-width: 1023px) {
+     .Encriptador {
+        gap: 1em;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Logo_Alura {
+        width: 6em;
+        height: 2.5em;
+        align-self: flex-start;
+    }
+
+    .Zona_Input {
+        padding-top: 1em;
+        align-items: center;
+    }
+
+    .Container_Input {
+        padding: 1em;
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        font-size: 1.5em;
+    }
+
+    .respuesta {
+        width: 70%;
+        text-align: center;
+        gap: 5em;
+    }
+
+    .output {
+        align-items: center;
+        padding: 0.5em;
+        font-size: 1.5em;
+        transition: height 0.3s ease, padding 0.3s ease;
+    }
+
+    .Imagen_Muñeco {
+        display: none;
+    }
+
+    .Mensaje, .Mensaje2 {
+        font-size: 1em; 
+    }
+
+    .Advertencia {
+        padding: 1.5em;
+    }
+
+    .Imagen_Ocultar {
+        width: 100%;
+    }
+
+    .boton-container {
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 12em; 
+    }
+
+    .Boton_Encriptar,
+    .Boton_Desencriptar {
+        width: 100%; 
+        height: 5em;
+        font-size: 1em;
+    }
+
+    .Boton_Copiar {
+        max-width: 64%;
+        min-width: 35%;
+        font-size: 1em;
+        border-top: 50%;
+    }
+  
+}
+
+
+@media (min-width: 1024px) and (max-width: 1919px) {
+    .Encriptador {
+        gap: 10%;
+        width: 100%;
+    }
+
+
+    .Zona_Input {
+        padding-top: 4em;
+        align-items: center;
+        width: 40%;
+        height: 90%;
+    }
+
+    .Container_Input {
+        padding: 1em;
+        flex-direction: column;
+        width: 100%;
+        height: 10em;
+    }
+
+    .respuesta {
+        width: 25em;
+        text-align: center;
+        gap: 1.5em;
+        max-height: 38em;
+    }
+
+    .output {
+        align-items: center;
+        padding: 0.5em;
+        width: 85%;
+        height: 60%;
+    }
+
+    .Imagen_Muñeco {
+        width: 14em;
+        height: 14em;
+        padding: 3em;
+    }
+
+    .Advertencia {
+        padding: 1.5em;
+    }
+
+    .Imagen_Ocultar {
+        width: 100%;
+    }
+
+    .boton-container{
+        width: 40em;
+        height: 8em;
+        justify-content: center;
+    }
+
+    .Boton_Encriptar,
+    .Boton_Desencriptar { 
+        height: 3.8em; 
+        border-radius: 1.2em;
+    }
+
+    .Boton_Copiar {
+        max-width: 25%;
+        border-top: 50%;
+        height: 7%;
+        border-radius: 1em;
+    }
+
+}
