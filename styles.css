@@ -85,7 +85,7 @@ body::before {
     text-align: center;
     justify-content: center;
     gap: 0.5em;
-    font-family: font-family: var(--fuente-pt-sans);
+    font-family: var(--fuente-pt-sans);
 }
 
 .respuesta {
